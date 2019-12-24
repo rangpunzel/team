@@ -13,6 +13,8 @@ public static List<UserVO> userList=new ArrayList<>();
         UserVO admin=new UserVO();
         admin.setId("admin");
         admin.setPassword("admin");
+        admin.setAddress("admin");
+        admin.setPhonNumber("admin");
         admin.setRoll("admin");
         userList.add(admin);
         

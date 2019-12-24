@@ -1,11 +1,10 @@
 package Service;
 
-import Dao.BookDao;
-import Dao.LoginDao;
-import VO.LoginSessionVO;
-
 import java.io.PrintStream;
 import java.util.Scanner;
+
+import Dao.BookDao;
+import Dao.LoginDao;
 
 public class DisPlayMenu {
     private PrintStream printStream = new PrintStream(System.out);
@@ -32,6 +31,7 @@ public class DisPlayMenu {
             selectedNum = scanner.nextLine();
             if (selectedNum.equals("1")) {
                 System.out.println("도서검색");
+                bookSeviceImpl.searchBook();
             } else if (selectedNum.equals("2")) {
                 System.out.println("베스트셀러 목록을 보여주는 함수");
                 
