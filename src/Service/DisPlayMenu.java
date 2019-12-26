@@ -3,7 +3,7 @@ package Service;
 import java.io.PrintStream;
 import java.util.Scanner;
 
-import Dao.BookDao;
+import Dao.BookRatingDao;
 import Dao.LoginDao;
 
 public class DisPlayMenu {
@@ -65,6 +65,7 @@ public class DisPlayMenu {
             	UserServieImpl usi = new UserServieImpl();
             	usi.ListUser();
             } 
+
             //
             
             
@@ -89,6 +90,16 @@ public class DisPlayMenu {
                 System.out.println("베스트셀러 목록을 보여주는 함수");
             } else if (selectedNum.equals("3")) {
                 System.out.println("로그인 확인 후 구매 화면으로 돌아가기 ");
+            } else if (selectedNum.equals("7")) {
+            	BookRatingDao brd=new BookRatingDao();
+            	brd.userRating();
+            } else if (selectedNum.equals("8")) {
+            	BookRatingDao brd=new BookRatingDao();
+            	brd.ratingList();
+            } else if (selectedNum.equals("9")) {
+            	UserServieImpl usi = new UserServieImpl();
+            	usi.myPage();
+            	
             } else if (selectedNum.equals("종료")) {
                 defaultMenu();
                 //세션 반납 로그아웃

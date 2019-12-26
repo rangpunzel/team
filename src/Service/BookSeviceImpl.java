@@ -29,6 +29,20 @@ public class BookSeviceImpl  implements  BookService{
 	}
 
 
+	@Override
+	public void userRating() {
+	  bookRatingDao.userRating();
+		
+	}
+
+
+	@Override
+	public void ratingList() {
+		  bookRatingDao.ratingList();
+		
+	}
+
+
 
 
 }

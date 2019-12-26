@@ -5,7 +5,14 @@ public class BookRatingVO {
 	private double score;//점수 1~10점까지 가능
 	private String comment;//한줄평
 	private String bookName;
+	private String userId;
 	 
+	public String getUserId() {
+		return userId;
+	}
+	public void setUserId(String userId) {
+		this.userId = userId;
+	}
 	public String getBookName() {
 		return bookName;
 	}

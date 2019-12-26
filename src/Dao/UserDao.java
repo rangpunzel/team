@@ -2,9 +2,8 @@ package Dao;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
-import Service.UserServieImpl;
-import VO.BookVO;
 import VO.UserVO;
 
 public class UserDao {
@@ -71,7 +70,7 @@ public static List<UserVO> userList=new ArrayList<>();
 
     }
     
-    public void userDelete(String deleteId) {
+    public void userDelete(String deleteId) { //삭제
     	
         for(int i=0;i<userList.size();i++){
         	if(userList.get(i).getId().equals(deleteId)){
@@ -81,4 +80,47 @@ public static List<UserVO> userList=new ArrayList<>();
           }
     	
     }
+
+
+
+	public void myPage() { //마이페이지
+		Scanner s = new Scanner(System.in);
+
+		for(int i=0;i<userList.size();i++){
+			if(LoginDao.loginSessionVO.getId().equals(userList.get(i).getId())){
+			System.out.println("==============================================");
+			System.out.println("아이디 : "+userList.get(i).getId());
+			System.out.println("포인트 : "+userList.get(i).getPoint());
+			System.out.println("1.비밀번호 : "+userList.get(i).getPassword());
+			System.out.println("2.이름 : "+userList.get(i).getName());
+			System.out.println("3.주소 : "+userList.get(i).getAddress());
+			System.out.println("4.전화번호 : "+userList.get(i).getPhonNumber());
+			System.out.println("수정할 정보의 번호를 입력해주세요");
+			int menu = Integer.parseInt(s.nextLine());
+			String revise = "";
+			switch(menu){
+			case 1:
+				System.out.println("비밀번호 : ");
+				revise = s.nextLine();
+				userList.get(i).setPassword(revise);
+			break;
+			case 2:
+				System.out.println("이름 : ");
+				revise = s.nextLine();
+				userList.get(i).setName(revise);
+			break;
+			case 3:
+				System.out.println("주소 : ");
+				revise = s.nextLine();
+				userList.get(i).setAddress(revise);
+			break;
+			case 4:
+				System.out.println("전화번호 : ");
+				revise = s.nextLine();
+				userList.get(i).setPhonNumber(revise);
+			break;
+				}System.out.println("수정되었습니다.");
+			}
+		}myPage();
+	}
 }

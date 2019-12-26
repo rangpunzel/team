@@ -57,4 +57,10 @@ public class UserServieImpl implements  UserService {
 	public void ListUser() {
 		ud.userList();
 	}
+
+	@Override
+	public void myPage() {
+		ud.myPage();
+		
+	}
 }
